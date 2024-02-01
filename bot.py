@@ -10,9 +10,9 @@ TOKEN = os.getenv('TOKEN')
 intents = discord.Intents.default()
 intents.message_content = True
 
-async def send_message(message, user_message):
+async def send_message(message):
     try:
-        response = responses.handle_response(user_message)
+        response = await responses.handle_response(message)
         await message.channel.send(response)
     except Exception as e:
         print(e)
@@ -28,15 +28,11 @@ def run_discord_bot():
     async def on_message(message):
         if message.author == client.user:
             return
-        
-        username = str(message.author)
-        user_message = str(message.content)
-        channel = str(message.channel)
 
-        print(f"{username} said:'{user_message}' ({channel})")
+        print(f"{message.author} said:'{message.content}' ({message.channel})")
 
-        if user_message[0] == '-':
-            user_message = user_message[1:]
-            await send_message(message, user_message)
+        if message.content[0] == '-':
+            message.content = message.content[1:]
+            await send_message(message)
 
     client.run(TOKEN)

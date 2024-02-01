@@ -1,5 +1,7 @@
 {
     "cSpell.words": [
-        "dotenv"
-    ]
+        "dotenv",
+        "vlist"
+    ],
+    "python.REPL.enableREPLSmartSend": false
 }
