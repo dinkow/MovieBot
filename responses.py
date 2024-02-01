@@ -11,5 +11,5 @@ def handle_response(message) -> str:
         return 'list'
     
     elif p_message[:4] == 'help':
-        return 'help'
+        return '`-list:` see current movie recommendations\n`-rec movie name:` add a movie to the list\n`-vote movie name:` vote for a specific movie'
     
