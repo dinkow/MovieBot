@@ -1,4 +1,3 @@
-import discord
 import handler
 import roles
 
