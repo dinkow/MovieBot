@@ -47,3 +47,4 @@ functionality
         - dm
             -rec "movie name" (will add a movie to recommendations)
             -vote "movie name" (will add a vote to the movie)
+            

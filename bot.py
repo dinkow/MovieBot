@@ -38,7 +38,5 @@ def run_discord_bot():
         if user_message[0] == '-':
             user_message = user_message[1:]
             await send_message(message, user_message)
-        else:
-            await send_message(message, user_message)
 
     client.run(TOKEN)
