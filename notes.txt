@@ -1,0 +1,49 @@
+token = MTIwMjM5NzgwNDEyNzk4MTcxOQ.GrWtlp.RWDxs4yDWq8DHiexdhxSI4g8qslDuOAJJKcvGw
+invite link = https://discord.com/api/oauth2/authorize?client_id=1202397804127981719&permissions=137439344704&scope=bot
+
+functionality
+    - recommend a movie
+        - user must dm the bot. if a -rec is seen in the server it will delete the users message and send a message saying to dm the bot with the movie recommendation
+            rec is detected
+                if -rec is not private
+                    delete message
+                    send message saying to dm
+                else
+                    check if user already has a movie recommendation in JSON
+                    if user has movie recommendation
+                        ask user if they want to change their movie
+                    else
+                        add movie to recommendations
+
+        - one movie recommendation per user
+        - data storage (JSON)
+    
+    - voting
+        - user must dm to vote. if a -vote is seen in the server it will delete the users message and send a message saying to dm the bot with your vote
+            vote is detected
+                if -vote is not private
+                    delete message
+                    send message saying to dm
+                else
+                    check if user has already voted
+                    if user has voted
+                        ask if they want to change their vote
+                    else
+                        vote for movie
+
+        - updating vote count
+        - one vote per permission
+    
+    - view current movie recommendations
+        - display current vote count
+            this can be done in the server or private
+            list is detected
+                list all movie recommendations along with the number of votes
+
+    - commands
+        - server
+            -list (will show list of current movies and how many votes they have)
+            -help (will display a list of commands)
+        - dm
+            -rec "movie name" (will add a movie to recommendations)
+            -vote "movie name" (will add a vote to the movie)
